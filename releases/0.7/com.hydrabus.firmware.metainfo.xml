@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Richard Hughes <richard@hughsie.com> -->
+<component type="firmware">
+  <id>com.hydrabus.firmware</id>
+  <name>HydraBus</name>
+  <summary>Firmware for the HydraBus and HydraNFC</summary>
+  <description>
+    <p>
+      Updating the firmware on your HydraBus or HydraNFC device improves
+      performance and adds new features.
+    </p>
+    <p>
+      The HydraBus is used as an open source multi-tool for anyone interested
+      in learning, developing, debugging, hacking or penetration testing basic
+      or advanced embedded hardware.
+    </p>
+  </description>
+  <provides>
+    <!-- USB\VID_1D50&PID_60A6 B/L -->
+    <firmware type="flashed">fdde96e7-c68d-55e8-83f3-cf0121045938</firmware>
+    <!-- USB\VID_1D50&PID_60A7 F/W -->
+    <firmware type="flashed">ea08f2aa-53a6-5ba2-a2ad-da800fa53aae</firmware>
+  </provides>
+  <url type="homepage">http://hydrabus.com/</url>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0 and GPL-3.0</project_license>
+  <developer_name>Benjamin Vernoux</developer_name>
+  <releases>
+    <release urgency="medium" version="0.7" date="2016-04-16">
+      <checksum filename="hydrafw.dfu" target="content"/>
+      <description>
+        <p>
+          This is an beta release with the following improvements to HydraBus:
+        </p>
+        <ul>
+          <li>Added freeform string as byte sequence</li>
+          <li>Added PIN, SPI, I2C, 2-Wire, UART, CAN and OpenOCD JTAG binary modes compatible with BusPirate BBIO</li>
+          <li>Fix problems with CAN support fixing speed changes and pin descriptions</li>
+          <li>Added sump optimization when getting samples</li>
+          <li>Add support for TRST and MSB/LSB when in JTAG scanner and debugger mode</li>
+        </ul>
+        <p>
+          Additionally, the following improvements were made to HydraNFC:
+        </p>
+          <li>Added in standalone mode sniffing LED indication for standalone mode</li>
+          <li>Fix hang when entering or exiting from sniffer mode</li>
+          <li>Added emul-mifare and emul-mf-ul HydraNFC emulation commands</li>
+          <li>Added dm0 and dm1 commands</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/hughsie/hydrabus-firmware/master/screenshots/bootloader.png</image>
+      <caption>Unplug the board, hold down UBTN button then reconnect the USB power.</caption>
+    </screenshot>
+  </screenshots>
+</component>
