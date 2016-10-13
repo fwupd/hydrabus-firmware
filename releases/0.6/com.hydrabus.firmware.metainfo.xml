@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Richard Hughes <richard@hughsie.com> -->
+<component type="firmware">
+  <id>com.hydrabus.firmware</id>
+  <name>HydraBus</name>
+  <summary>Firmware for the HydraBus and HydraNFC</summary>
+  <description>
+    <p>
+      Updating the firmware on your HydraBus or HydraNFC device improves
+      performance and adds new features.
+    </p>
+    <p>
+      The HydraBus is used as an open source multi-tool for anyone interested
+      in learning, developing, debugging, hacking or penetration testing basic
+      or advanced embedded hardware.
+    </p>
+  </description>
+  <provides>
+    <!-- USB\VID_1D50&PID_60A6 B/L -->
+    <firmware type="flashed">fdde96e7-c68d-55e8-83f3-cf0121045938</firmware>
+    <!-- USB\VID_1D50&PID_60A7 F/W -->
+    <firmware type="flashed">ea08f2aa-53a6-5ba2-a2ad-da800fa53aae</firmware>
+  </provides>
+  <url type="homepage">http://hydrabus.com/</url>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0 and GPL-3.0</project_license>
+  <developer_name>Benjamin Vernoux</developer_name>
+  <releases>
+    <release urgency="medium" version="0.6" date="2015-11-29">
+      <checksum filename="hydrafw.dfu" target="content"/>
+      <description>
+        <p>
+          This is an beta release with the following improvements to HydraBus:
+        </p>
+        <ul>
+          <li>Added 2-wire mode with supported frequency up to 1MHz</li>
+          <li>Added random command new token ~ to write random byte</li>
+          <li>Added random number generator using the STM32 hardware RNG</li>
+          <li>Added JTAG scanner/debugger mode</li>
+          <li>Added Logic Analyzer mode up to 1MHz 16 channels with SUMP support</li>
+          <li>Added CAN mode that needs a dedicated shield like HydraOBD</li>
+          <li>Added in uart mode the bridge command that can be used as UART sniffer</li>
+          <li>Fix a bug in the UART baudrate->BRR conversion</li>
+        </ul>
+        <p>
+          Additionally, the following improvements were made to HydraNFC:
+        </p>
+          <li>Add new command emul-mifare for Mifare Emulation</li>
+          <li>Add new commanf emul-3a for ISO14443A Emulation</li>
+          <li>Rename command mifare to typea</li>
+          <li>The scan command now supports 4 and 7 byte UID</li>
+          <li>Add a new Sniffer command sniff-dbg</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/hughsie/hydrabus-firmware/master/screenshots/bootloader.png</image>
+      <caption>Unplug the board, hold down UBTN button then reconnect the USB power.</caption>
+    </screenshot>
+  </screenshots>
+</component>
