@@ -42,6 +42,7 @@
         <p>
           Additionally, the following improvements were made to HydraNFC:
         </p>
+        <ul>
           <li>Added in standalone mode sniffing LED indication for standalone mode</li>
           <li>Fix hang when entering or exiting from sniffer mode</li>
           <li>Added emul-mifare and emul-mf-ul HydraNFC emulation commands</li>
